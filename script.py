@@ -52,7 +52,7 @@ for title in related_titles:
     if title:
         for item in titles:
             if item['title'] == title:
-                description = f"<![CDATA[<a href='{item['link']}'>Link</a> | <a href='{item['comment_link']}'>Comment Link</a>]]>"
+                description = f"Comment Link: {item['comment_link']}"
                 rss_item = PyRSS2Gen.RSSItem(
                     title=title,
                     link=item['link'],
