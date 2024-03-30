@@ -76,7 +76,7 @@ except FileNotFoundError:
 rss_items.extend(existing_items)
 
 rss = PyRSS2Gen.RSS2(
-    title="Daily Hacker News web development posts",
+    title="Hacker News web development posts RSS",
     link="https://github.com/ktseo41/hn-webdev-news",
     description="Daily Hacker News web development posts",
     lastBuildDate=datetime.now(),
