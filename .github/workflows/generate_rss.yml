@@ -30,10 +30,14 @@ jobs:
         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       run: python script.py
     
+    - name: Make index.html
+      run: python convert.py
+    
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add rss.xml
+        git add index.html
         git commit -m "Update RSS feed" || echo "No changes to commit"
         git push origin HEAD:gh-pages --force
