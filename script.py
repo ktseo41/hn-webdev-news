@@ -63,7 +63,7 @@ for title in related_titles:
                 break
 
 try:
-    existing_feed = feedparser.parse("rss_feed.xml")
+    existing_feed = feedparser.parse("rss.xml")
     existing_items = [PyRSS2Gen.RSSItem(
         title=item.title,
         link=item.link,
@@ -83,5 +83,5 @@ rss = PyRSS2Gen.RSS2(
     items=rss_items
 )
 
-with open("rss_feed.xml", "w") as f:
+with open("rss.xml", "w") as f:
     rss.write_xml(f)
