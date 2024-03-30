@@ -55,7 +55,7 @@ for title in related_titles:
                 description = f"Comment Link: {item['comment_link']}"
                 rss_item = PyRSS2Gen.RSSItem(
                     title=title,
-                    link=item['link'],
+                    link=item['comment_link'],
                     description=description,
                     pubDate=datetime.now()
                 )
