@@ -14,6 +14,7 @@ html_output = f'''<!DOCTYPE html>
 <body>
   <h1>{feed.feed.title}</h1>
   <p>{feed.feed.description}</p>
+  <p>RSS Link: <a href="https://ktseo41.github.io/hn-webdev-news/rss.xml">https://ktseo41.github.io/hn-webdev-news/rss.xml</a></p>
   <h2>Recent Posts</h2>
   <ul>
 '''
