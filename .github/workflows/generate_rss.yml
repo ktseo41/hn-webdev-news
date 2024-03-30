@@ -30,8 +30,8 @@ jobs:
         ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       run: python script.py
     
-    - name: Make index.html
-      run: python convert.py
+    - name: Generate index.html
+      run: python make_index.py
     
     - name: Commit and push changes
       run: |
