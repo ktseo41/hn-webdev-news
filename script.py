@@ -52,11 +52,9 @@ for title in related_titles:
     if title:
         for item in titles:
             if item['title'] == title:
-                description = f"Comment Link: {item['comment_link']}"
                 rss_item = PyRSS2Gen.RSSItem(
                     title=title,
                     link=item['comment_link'],
-                    description=description,
                     pubDate=datetime.now()
                 )
                 rss_items.append(rss_item)
