@@ -65,7 +65,6 @@ try:
     existing_items = [PyRSS2Gen.RSSItem(
         title=item.title,
         link=item.link,
-        description=item.description,
         pubDate=date_parser.parse(item.published)
     ) for item in existing_feed.entries]
 except FileNotFoundError:
