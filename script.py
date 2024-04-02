@@ -29,7 +29,7 @@ for item in soup.find_all("tr", class_="athing"):
     comment_link = "https://news.ycombinator.com/" + item.find_next_sibling("tr").find("span", class_="subline").find_all("a")[1]["href"]
     titles.append({"title": title, "link": link, "comment_link": comment_link})
 
-system = "Determine which of the following Hacker News post titles are related to web development and a web developer would likely be interested in reading. Return only the related titles separated by newlines."
+system = "Determine which of the following Hacker News titles web developer would likely be interested in reading. Return only the related titles separated by newlines."
 content = "\n\n" + "\n".join([item['title'] for item in titles])
 
 message = client.messages.create(
