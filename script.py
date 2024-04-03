@@ -1,4 +1,5 @@
 import os
+import json
 import anthropic
 import requests
 import PyRSS2Gen
@@ -29,7 +30,10 @@ for item in soup.find_all("tr", class_="athing"):
     comment_link = "https://news.ycombinator.com/" + item.find_next_sibling("tr").find("span", class_="subline").find_all("a")[1]["href"]
     titles.append({"title": title, "link": link, "comment_link": comment_link})
 
-system = "Determine which of the following Hacker News titles web developer would likely be interested in reading. Return only the related titles separated by newlines."
+with open("examples.json") as f:
+    examples = json.load(f)
+
+system = "Determine which of the following Hacker News titles web developer would likely be interested in reading. Return only the related titles separated by newlines." + "\n\n" + "---Examples---\n" + "\n".join([f"### Input\n{item['input']}\n\n### Output\n{item['output']}\n\n---\n" for item in examples])
 content = "\n\n" + "\n".join([item['title'] for item in titles])
 
 message = client.messages.create(
