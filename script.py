@@ -80,5 +80,5 @@ rss = PyRSS2Gen.RSS2(
     items=rss_items
 )
 
-with open("rss.xml", "w") as f:
+with open("rss.xml", "w", encoding="utf-8") as f:
     rss.write_xml(f)
